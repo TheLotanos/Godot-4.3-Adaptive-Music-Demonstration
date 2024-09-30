@@ -5,9 +5,9 @@ extends Node2D
 var stream: AudioStreamSynchronized
 
 func _ready() -> void:
-	stream = $AudioStreamPlayer2D.stream
+	stream = $AudioStreamPlayer.stream
 	stream.set_sync_stream_volume(0, 0.0)
-	$AudioStreamPlayer2D.play()
+	$AudioStreamPlayer.play()
 
 func _process(delta: float) -> void:
 	var intensity = clamp((player.position.x-64)/1000.0, 0, 1)

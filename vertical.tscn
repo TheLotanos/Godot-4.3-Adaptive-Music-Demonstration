@@ -53,7 +53,7 @@ texture = SubResource("GradientTexture2D_t0mpj")
 [node name="player" parent="." instance=ExtResource("2_2ctn0")]
 unique_name_in_owner = true
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamSynchronized_rkdj7")
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="."]

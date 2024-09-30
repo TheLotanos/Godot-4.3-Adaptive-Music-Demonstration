@@ -105,7 +105,7 @@ color = Color(0.500741, 1.2153e-06, 1.44392e-07, 1)
 unique_name_in_owner = true
 position = Vector2(64, 64)
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamInteractive_61tlj")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
