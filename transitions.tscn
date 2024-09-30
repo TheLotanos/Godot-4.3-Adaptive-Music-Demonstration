@@ -1,0 +1,158 @@
+[gd_scene load_steps=13 format=3 uid="uid://bjxqpwrq2f1cc"]
+
+[ext_resource type="Script" path="res://transitions.gd" id="1_7hd8u"]
+[ext_resource type="PackedScene" uid="uid://cges2l0mh3gj" path="res://player.tscn" id="2_7l8am"]
+[ext_resource type="AudioStream" uid="uid://djdp7htl8e81i" path="res://HorizontalMusic_NormalHealth_Intro.ogg" id="3_3xuh7"]
+[ext_resource type="AudioStream" uid="uid://ikh4wfpdm4pu" path="res://HorizontalMusic_NormalHealth.ogg" id="4_iiqql"]
+[ext_resource type="AudioStream" uid="uid://djdk1xjigcgr" path="res://HorizontalMusic_CloseToEnd.ogg" id="5_wrf4o"]
+[ext_resource type="AudioStream" uid="uid://t8sw323lccfy" path="res://HorizontalMusic_LowHealth.ogg" id="6_le1kt"]
+[ext_resource type="AudioStream" uid="uid://5orcwb5j0qs5" path="res://HorizontalMusic_Stinger_1.ogg" id="7_cutxo"]
+[ext_resource type="AudioStream" uid="uid://eofcmnppsmew" path="res://HorizontalMusic_Stinger_2.ogg" id="8_l7ydq"]
+[ext_resource type="AudioStream" uid="uid://c4h77bvbekek" path="res://HorizontalMusic_Stinger_3.ogg" id="9_kb8ts"]
+
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_61tlj"]
+clip_count = 7
+clip_0/name = &"Intro"
+clip_0/stream = ExtResource("3_3xuh7")
+clip_0/auto_advance = 1
+clip_0/next_clip = 1
+clip_1/name = &"Base"
+clip_1/stream = ExtResource("4_iiqql")
+clip_1/auto_advance = 0
+clip_2/name = &"End"
+clip_2/stream = ExtResource("5_wrf4o")
+clip_2/auto_advance = 0
+clip_3/name = &"Low_HP"
+clip_3/stream = ExtResource("6_le1kt")
+clip_3/auto_advance = 0
+clip_4/name = &"-> End"
+clip_4/stream = ExtResource("9_kb8ts")
+clip_4/auto_advance = 1
+clip_4/next_clip = 2
+clip_5/name = &"-> Base"
+clip_5/stream = ExtResource("8_l7ydq")
+clip_5/auto_advance = 1
+clip_5/next_clip = 1
+clip_6/name = &"-> Low_HP"
+clip_6/stream = ExtResource("7_cutxo")
+clip_6/auto_advance = 1
+clip_6/next_clip = 3
+_transitions = {
+Vector2i(0, -1): {
+"fade_beats": 1,
+"fade_mode": 0,
+"from_time": 3,
+"to_time": 1
+},
+Vector2i(1, -1): {
+"fade_beats": 1,
+"fade_mode": 0,
+"from_time": 2,
+"to_time": 1
+},
+Vector2i(1, 2): {
+"fade_beats": 1,
+"fade_mode": 4,
+"filler_clip": 4,
+"from_time": 0,
+"to_time": 0,
+"use_filler_clip": true
+},
+Vector2i(2, -1): {
+"fade_beats": 1,
+"fade_mode": 0,
+"from_time": 2,
+"to_time": 1
+},
+Vector2i(3, -1): {
+"fade_beats": 1,
+"fade_mode": 0,
+"from_time": 2,
+"to_time": 1
+}
+}
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_eren4"]
+normal = Vector2(1, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qkgsn"]
+size = Vector2(379, 300)
+
+[node name="transitions" type="Node2D"]
+script = ExtResource("1_7hd8u")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_top = 217.0
+offset_right = 1145.0
+offset_bottom = 517.0
+
+[node name="ColorRect2" type="ColorRect" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.218684, 0.357216, 1, 1)
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1.37173e-06, 0.529253, 0.243914, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.500741, 1.2153e-06, 1.44392e-07, 1)
+
+[node name="player" parent="." instance=ExtResource("2_7l8am")]
+unique_name_in_owner = true
+position = Vector2(64, 64)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamInteractive_61tlj")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_eren4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(528, 0)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_eren4")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1152, 288)
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_eren4")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(592, 648)
+rotation = -1.5708
+shape = SubResource("WorldBoundaryShape2D_eren4")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(572, 322)
+zoom = Vector2(0.84, 0.84)
+
+[node name="base" type="Area2D" parent="."]
+position = Vector2(10, 227)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="base"]
+position = Vector2(179.5, 140)
+shape = SubResource("RectangleShape2D_qkgsn")
+
+[node name="end" type="Area2D" parent="."]
+position = Vector2(393, 227)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="end"]
+position = Vector2(179.5, 140)
+shape = SubResource("RectangleShape2D_qkgsn")
+
+[node name="low_hp" type="Area2D" parent="."]
+position = Vector2(776, 227)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="low_hp"]
+position = Vector2(179.5, 140)
+shape = SubResource("RectangleShape2D_qkgsn")
+
+[connection signal="body_entered" from="base" to="." method="_on_base_body_entered"]
+[connection signal="body_entered" from="end" to="." method="_on_end_body_entered"]
+[connection signal="body_entered" from="low_hp" to="." method="_on_low_hp_body_entered"]

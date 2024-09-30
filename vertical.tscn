@@ -1,0 +1,127 @@
+[gd_scene load_steps=13 format=3 uid="uid://opapxq5qag7r"]
+
+[ext_resource type="Script" path="res://vertical.gd" id="1_53uk4"]
+[ext_resource type="PackedScene" uid="uid://cges2l0mh3gj" path="res://player.tscn" id="2_2ctn0"]
+[ext_resource type="AudioStream" uid="uid://cq63ni8lwolfu" path="res://TwoSisters_Level_Base.ogg" id="3_lh1m0"]
+[ext_resource type="AudioStream" uid="uid://dyjba0q0aa2qv" path="res://intensity.ogg" id="4_njgli"]
+[ext_resource type="AudioStream" uid="uid://c7ruamcir153n" path="res://mystery.ogg" id="5_dcug7"]
+[ext_resource type="FontFile" uid="uid://d0mcuo3ppmyd" path="res://GelPenUprightLight.ttf" id="6_2plyj"]
+
+[sub_resource type="Gradient" id="Gradient_c4td3"]
+colors = PackedColorArray(0.513726, 0, 0, 0, 0.513726, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_bqpxp"]
+gradient = SubResource("Gradient_c4td3")
+
+[sub_resource type="Gradient" id="Gradient_uvm8t"]
+colors = PackedColorArray(0, 0, 1, 0, 0, 0, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_t0mpj"]
+gradient = SubResource("Gradient_uvm8t")
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_rkdj7"]
+stream_count = 3
+stream_0/stream = ExtResource("3_lh1m0")
+stream_0/volume = -60.0
+stream_1/stream = ExtResource("4_njgli")
+stream_1/volume = -60.0
+stream_2/stream = ExtResource("5_dcug7")
+stream_2/volume = -60.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_eren4"]
+normal = Vector2(1, 0)
+
+[node name="vertical" type="Node2D"]
+script = ExtResource("1_53uk4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -3.0
+offset_top = -9.0
+offset_right = 1152.0
+offset_bottom = 661.0
+texture = SubResource("GradientTexture1D_bqpxp")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.588235)
+offset_left = 1152.0
+offset_top = 1.0
+offset_right = 1812.0
+offset_bottom = 1165.0
+rotation = 1.5708
+texture = SubResource("GradientTexture2D_t0mpj")
+
+[node name="player" parent="." instance=ExtResource("2_2ctn0")]
+unique_name_in_owner = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamSynchronized_rkdj7")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer3/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_2plyj")
+theme_override_font_sizes/font_size = 50
+text = "Mystery: "
+
+[node name="mystery" type="Label" parent="HBoxContainer3/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_2plyj")
+theme_override_font_sizes/font_size = 50
+text = "0
+"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer3/VBoxContainer2"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer3/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_2plyj")
+theme_override_font_sizes/font_size = 50
+text = "Intensity: "
+
+[node name="intensity" type="Label" parent="HBoxContainer3/VBoxContainer2/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_2plyj")
+theme_override_font_sizes/font_size = 50
+text = "0
+"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_eren4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(528, 0)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_eren4")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1152, 288)
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_eren4")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(592, 648)
+rotation = -1.5708
+shape = SubResource("WorldBoundaryShape2D_eren4")
