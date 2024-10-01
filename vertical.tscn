@@ -7,6 +7,15 @@
 [ext_resource type="AudioStream" uid="uid://c7ruamcir153n" path="res://assets/mystery.ogg" id="5_dcug7"]
 [ext_resource type="FontFile" uid="uid://d0mcuo3ppmyd" path="res://assets/GelPenUprightLight.ttf" id="6_2plyj"]
 
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_rkdj7"]
+stream_count = 3
+stream_0/stream = ExtResource("3_lh1m0")
+stream_0/volume = -60.0
+stream_1/stream = ExtResource("4_njgli")
+stream_1/volume = -60.0
+stream_2/stream = ExtResource("5_dcug7")
+stream_2/volume = -60.0
+
 [sub_resource type="Gradient" id="Gradient_c4td3"]
 colors = PackedColorArray(0.513726, 0, 0, 0, 0.513726, 0, 0, 1)
 
@@ -19,20 +28,14 @@ colors = PackedColorArray(0, 0, 1, 0, 0, 0, 1, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_t0mpj"]
 gradient = SubResource("Gradient_uvm8t")
 
-[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_rkdj7"]
-stream_count = 3
-stream_0/stream = ExtResource("3_lh1m0")
-stream_0/volume = -60.0
-stream_1/stream = ExtResource("4_njgli")
-stream_1/volume = -60.0
-stream_2/stream = ExtResource("5_dcug7")
-stream_2/volume = -60.0
-
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_eren4"]
 normal = Vector2(1, 0)
 
 [node name="vertical" type="Node2D"]
 script = ExtResource("1_53uk4")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamSynchronized_rkdj7")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -3.0
@@ -52,9 +55,6 @@ texture = SubResource("GradientTexture2D_t0mpj")
 
 [node name="player" parent="." instance=ExtResource("2_2ctn0")]
 unique_name_in_owner = true
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamSynchronized_rkdj7")
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="."]
 offset_right = 1152.0
