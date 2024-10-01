@@ -81,6 +81,9 @@ size = Vector2(379, 300)
 [node name="transitions" type="Node2D"]
 script = ExtResource("1_7hd8u")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamInteractive_61tlj")
+
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 offset_top = 217.0
 offset_right = 1145.0
@@ -104,9 +107,6 @@ color = Color(0.500741, 1.2153e-06, 1.44392e-07, 1)
 [node name="player" parent="." instance=ExtResource("2_7l8am")]
 unique_name_in_owner = true
 position = Vector2(64, 64)
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamInteractive_61tlj")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
