@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://transitions.gd" id="1_7hd8u"]
 [ext_resource type="PackedScene" uid="uid://cges2l0mh3gj" path="res://player.tscn" id="2_7l8am"]
-[ext_resource type="AudioStream" uid="uid://djdp7htl8e81i" path="res://HorizontalMusic_NormalHealth_Intro.ogg" id="3_3xuh7"]
-[ext_resource type="AudioStream" uid="uid://ikh4wfpdm4pu" path="res://HorizontalMusic_NormalHealth.ogg" id="4_iiqql"]
-[ext_resource type="AudioStream" uid="uid://djdk1xjigcgr" path="res://HorizontalMusic_CloseToEnd.ogg" id="5_wrf4o"]
-[ext_resource type="AudioStream" uid="uid://t8sw323lccfy" path="res://HorizontalMusic_LowHealth.ogg" id="6_le1kt"]
-[ext_resource type="AudioStream" uid="uid://5orcwb5j0qs5" path="res://HorizontalMusic_Stinger_1.ogg" id="7_cutxo"]
-[ext_resource type="AudioStream" uid="uid://eofcmnppsmew" path="res://HorizontalMusic_Stinger_2.ogg" id="8_l7ydq"]
-[ext_resource type="AudioStream" uid="uid://c4h77bvbekek" path="res://HorizontalMusic_Stinger_3.ogg" id="9_kb8ts"]
+[ext_resource type="AudioStream" uid="uid://djdp7htl8e81i" path="res://assets/HorizontalMusic_NormalHealth_Intro.ogg" id="3_3xuh7"]
+[ext_resource type="AudioStream" uid="uid://ikh4wfpdm4pu" path="res://assets/HorizontalMusic_NormalHealth.ogg" id="4_iiqql"]
+[ext_resource type="AudioStream" uid="uid://djdk1xjigcgr" path="res://assets/HorizontalMusic_CloseToEnd.ogg" id="5_wrf4o"]
+[ext_resource type="AudioStream" uid="uid://t8sw323lccfy" path="res://assets/HorizontalMusic_LowHealth.ogg" id="6_le1kt"]
+[ext_resource type="AudioStream" uid="uid://5orcwb5j0qs5" path="res://assets/HorizontalMusic_Stinger_1.ogg" id="7_cutxo"]
+[ext_resource type="AudioStream" uid="uid://eofcmnppsmew" path="res://assets/HorizontalMusic_Stinger_2.ogg" id="8_l7ydq"]
+[ext_resource type="AudioStream" uid="uid://c4h77bvbekek" path="res://assets/HorizontalMusic_Stinger_3.ogg" id="9_kb8ts"]
 
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_61tlj"]
 clip_count = 7

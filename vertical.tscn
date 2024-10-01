@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://vertical.gd" id="1_53uk4"]
 [ext_resource type="PackedScene" uid="uid://cges2l0mh3gj" path="res://player.tscn" id="2_2ctn0"]
-[ext_resource type="AudioStream" uid="uid://cq63ni8lwolfu" path="res://TwoSisters_Level_Base.ogg" id="3_lh1m0"]
-[ext_resource type="AudioStream" uid="uid://dyjba0q0aa2qv" path="res://intensity.ogg" id="4_njgli"]
-[ext_resource type="AudioStream" uid="uid://c7ruamcir153n" path="res://mystery.ogg" id="5_dcug7"]
-[ext_resource type="FontFile" uid="uid://d0mcuo3ppmyd" path="res://GelPenUprightLight.ttf" id="6_2plyj"]
+[ext_resource type="AudioStream" uid="uid://cq63ni8lwolfu" path="res://assets/TwoSisters_Level_Base.ogg" id="3_lh1m0"]
+[ext_resource type="AudioStream" uid="uid://dyjba0q0aa2qv" path="res://assets/intensity.ogg" id="4_njgli"]
+[ext_resource type="AudioStream" uid="uid://c7ruamcir153n" path="res://assets/mystery.ogg" id="5_dcug7"]
+[ext_resource type="FontFile" uid="uid://d0mcuo3ppmyd" path="res://assets/GelPenUprightLight.ttf" id="6_2plyj"]
 
 [sub_resource type="Gradient" id="Gradient_c4td3"]
 colors = PackedColorArray(0.513726, 0, 0, 0, 0.513726, 0, 0, 1)

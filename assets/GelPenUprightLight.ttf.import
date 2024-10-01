@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://d0mcuo3ppmyd"
-path="res://.godot/imported/GelPenUprightLight.ttf-043d75c77b8773726c88a6022d6243e1.fontdata"
+path="res://.godot/imported/GelPenUprightLight.ttf-f2279c2d04b2da98063b8a21e4efed6e.fontdata"
 
 [deps]
 
-source_file="res://GelPenUprightLight.ttf"
-dest_files=["res://.godot/imported/GelPenUprightLight.ttf-043d75c77b8773726c88a6022d6243e1.fontdata"]
+source_file="res://assets/GelPenUprightLight.ttf"
+dest_files=["res://.godot/imported/GelPenUprightLight.ttf-f2279c2d04b2da98063b8a21e4efed6e.fontdata"]
 
 [params]
 
